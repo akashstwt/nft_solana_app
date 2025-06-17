@@ -59,8 +59,8 @@ class WalletService extends ChangeNotifier {
     final seed = bip39.mnemonicToSeed(mnemonic);
     final keyPair = await ED25519_HD_KEY.derivePath("m/44'/501'/0'/0'", seed);
     
-    final publicKey = keyPair.publicKey;
-    final privateKey = keyPair.privateKey;
+    final publicKey = keyPair.key;
+    final privateKey = keyPair.key;
 
     _currentWallet = WalletModel(
       publicKey: publicKey.toString(),

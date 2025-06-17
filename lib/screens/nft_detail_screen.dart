@@ -11,6 +11,26 @@ class NFTDetailScreen extends StatelessWidget {
     required this.nft,
   });
 
+  void _shareNFT() {
+    debugPrint('Share NFT tapped for ${nft.name}');
+  }
+
+  void _buyNFT(BuildContext context) {
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text('Buying NFT...')),
+    );
+    debugPrint('Buy NFT logic here for ${nft.name}');
+  }
+
+  void _listNFT(BuildContext context) {
+    
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text('Listing NFT...')),
+    );
+    debugPrint('List NFT logic here for ${nft.name}');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
