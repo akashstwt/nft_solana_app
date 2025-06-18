@@ -16,7 +16,6 @@ class NFTDetailScreen extends StatelessWidget {
   }
 
   void _buyNFT(BuildContext context) {
-
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(content: Text('Buying NFT...')),
     );
@@ -24,7 +23,6 @@ class NFTDetailScreen extends StatelessWidget {
   }
 
   void _listNFT(BuildContext context) {
-    
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(content: Text('Listing NFT...')),
     );
@@ -311,7 +309,7 @@ class NFTDetailScreen extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        const SizedBox(height: 16),
+        const SizedBox(height: 12),
         GridView.builder(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
@@ -346,15 +344,17 @@ class NFTDetailScreen extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                   ),
                   const SizedBox(height: 4),
-                  Text(
-                    entry.value.toString(),
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
+                  Expanded(
+                    child: Text(
+                      entry.value.toString(),
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                     ),
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
                   ),
                 ],
               ),
